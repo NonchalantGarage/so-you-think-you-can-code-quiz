@@ -1,0 +1,29 @@
+html {
+    border: 1px solid black ;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.quizcontainer{
+    width: 700px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    }
+.quizcontainer p{
+    text-align: center;
+}
+
+.quizcontainer ul li{
+    list-style: none;
+}
+.quizcontainer a{
+    text-decoration: none;
+    color: black;
+}

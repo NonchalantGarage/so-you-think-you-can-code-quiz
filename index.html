@@ -9,15 +9,26 @@
 </head>
 <body>
     <header>
-        <p>View High Scores</p>
-        <p>Time:0</p>
+        <p id="highScore">View High Scores</p>
+        <p id="duration">Time: 0</p>
     </header>
-    <h1 class="page-title">Coding Quiz Challenge</h1>
-    <div>
-    <p> Try to answer the following code-related questions within the time limit.
-    Keep in mind that incorrect answers will penalize your score/time by ten seconds.
-    </p>
-    <button type="button">Start Quiz</button>
+     
+    <div class = "quizcontainer">   
+         <h1 class="questionNumber">Coding Quiz Challenge</h1>
+        <div>
+        <p id="questionBox"> Try to answer the following code-related questions within the time limit.
+            <br>
+        Keep in mind that incorrect answers will penalize your score/time by ten seconds!
+        </p>
+        </div>
+    <div >
+        <ul id="answerbtn">
+            <li><a href="#">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">JOIN</a></li>
+            <li><a href="#">LOGIN</a></li>
+        </ul>
+            <button type="button">Start Quiz</button>
     </div>
     <Script type="text/javascript" src="./assets/js/script.js"> </Script>
 </body>
