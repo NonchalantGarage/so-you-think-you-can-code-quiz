@@ -22,8 +22,14 @@ header {
 
 .quizcontainer ul li{
     list-style: none;
+    
 }
 .quizcontainer a{
-    text-decoration: none;
+    text-decoration: none;  
     color: black;
+}
+
+button{
+    border-radius: 50px;
+    background-color: rgb(132, 153, 223);
 }
