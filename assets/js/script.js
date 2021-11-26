@@ -43,12 +43,16 @@ var startTimer = setInterval(function(){
     }, 1000);
 
 
-var choiceEl = document.createElement("li");
-choiceEl.className = "button";
-multipleChoiceEl.appendChild(choiceEl);
-var buttonChoice = document.createElement('button');
-buttonChoice.innerText="wtf";
-choiceEl.appendChild(buttonChoice);
+for (var i=0; i < answers1.length; i++){
+    var choiceEl = document.createElement("li");
+    choiceEl.className = "button";
+    multipleChoiceEl.appendChild(choiceEl);
+    var buttonChoice = document.createElement('button');
+    buttonChoice.innerText = answers1[i];
+    choiceEl.appendChild(buttonChoice);
+}
+
+
 }
 
 
@@ -64,10 +68,12 @@ function showNextQ(question){
 }
 var questionList = ["Which of the following is not a primitive data type in JavaScript?", "Where should you insert a JavaScript?", "How do you call a function named 'newFunction?", "How do you add a comment in a JavaScript?","Which event occurs when the user clicks on an HTML element?"]
 
+var answers1 = ["Strings", "Boolean", "Undefined", "Function",] 
+
 // var answers = [
 //     answer1, {
 //             text: "Strings", correct: false},
-//             {text: "Boolean", correct: false},
+//             {text: text: "Boolean", correct: false},
 //             {text: "Undefined", correct: false},
 //             {text: "Function", correct: true},
 // ]
