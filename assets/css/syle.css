@@ -22,6 +22,7 @@ header {
 
 .quizcontainer ul li{
     list-style: none;
+    padding: 5px;
     
 }
 .quizcontainer a{
@@ -32,4 +33,11 @@ header {
 button{
     border-radius: 50px;
     background-color: rgb(132, 153, 223);
+}
+
+.hide { 
+    visibility: hidden;
+}
+.reveal {
+    visibility: visible;
 }

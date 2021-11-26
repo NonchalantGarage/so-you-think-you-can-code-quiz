@@ -8,29 +8,32 @@
     <title>So You Think You Can Code</title>
 </head>
 <body>
-    <header>
+    <header>    
         <p id="highScore">View High Scores</p>
-        <p id="timerCountdown">Timer</p>
+        <p id="timerCountdown">Score     </p>
     </header>
      
     <div class = "quizcontainer">   
-         <h1 class="questionNumber">Coding Quiz Challenge</h1>
+         <h1 id= 'quiz-title'>Coding Quiz Challenge</h1>
         <div>
-        <p id="questionBox"> Try to answer the following code-related questions within the time limit.
+        <p id="question"> Try to answer the following code-related questions within the time limit.
             <br>
         Keep in mind that incorrect answers will penalize your score/time by ten seconds!
         </p>
         </div>
-    <div >
-        <ul id="answerbtn">
-            <li><button id="option1" type="button">Option 1</button></li>
-            <li><button id="option2" type="button">Option 2</button></li>
-            <li><button id="option3" type="button">Option 3</button></li>
-            <li><button id="option4" type="button">Option 4</button></li>
-            <br>  
-            <button id="start-btn" type="button">Start Quiz</button>
-
-        </ul>
+        <div >
+            <ul id="answerbtn" class ='hide'>
+                
+                <br>
+            </ul>
+            
+             <ul>
+            <li><button id="start-btn" type="button">Start Quiz</button></li>
+        </div> 
+        <div>
+            <P id = 'result'></P>
+        </div>
+             </ul>
     </div>
     <Script type="text/javascript" src="./assets/js/script.js"> </Script>
 </body>
