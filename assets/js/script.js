@@ -11,9 +11,8 @@
         
 var gameH1El = document.getElementById('quiz-title');
 var startBtnEl = document.getElementById('start-btn');
-var answerBtnEL = document.getElementById('answerbtn'); 
 var questionEl = document.getElementById('question')
-var answerButtonEl = document.getElementById("answerbtn")
+var multipleChoiceEl = document.getElementById("answerbtn")
 var resultEl = document.getElementById('result')
 var timerEl = document.getElementById('timerCountdown')
 
@@ -21,7 +20,6 @@ var timerEl = document.getElementById('timerCountdown')
 
 
 
-var currentQIndex
 
 startBtnEl.addEventListener('click',startGame);
  
@@ -30,33 +28,51 @@ function startGame (){
     gameH1El.classList.add('hide')
     currentQIndex = 0 
     setNextQ();
+
 // Start timer on click 
-var timeleft = 75;
+var timeleft = 2;
 
 var startTimer = setInterval(function(){
   if(timeleft <= 0){
     clearInterval(startTimer);
-    document.getElementById("timerCountdown").innerHTML = "GAME OVER";
+    document.getElementById("timerCountdown").innerHTML = "Game over";
   } else {
-    document.getElementById("timerCountdown").innerHTML = "Score " +  timeleft;
+        document.getElementById("timerCountdown").innerHTML = "Score " +  timeleft;
   }
   timeleft -= 1;
-}, 1000);
+    }, 1000);
 
+
+var choiceEl = document.createElement("li");
+choiceEl.className = "button";
+multipleChoiceEl.appendChild(choiceEl);
+var buttonChoice = document.createElement('button');
+buttonChoice.innerText="wtf";
+choiceEl.appendChild(buttonChoice);
 }
 
+
+
 // Loop through questions and answers 
+var currentQIndex 
 
 function setNextQ(){
-    showNextQ(currentQIndex)
+    showNextQ(currentQIndex);
 }   
 function showNextQ(question){
     questionEl.innerText = questionList[0]
 }
-
 var questionList = ["Which of the following is not a primitive data type in JavaScript?", "Where should you insert a JavaScript?", "How do you call a function named 'newFunction?", "How do you add a comment in a JavaScript?","Which event occurs when the user clicks on an HTML element?"]
 
+// var answers = [
+//     answer1, {
+//             text: "Strings", correct: false},
+//             {text: "Boolean", correct: false},
+//             {text: "Undefined", correct: false},
+//             {text: "Function", correct: true},
+// ]
 
+// console.log(ansers);
 // broken
 // var questionList = [ 
 //     { 
