@@ -16,10 +16,6 @@ var multipleChoiceEl = document.getElementById("answerbtn")
 var resultEl = document.getElementById('result')
 var timerEl = document.getElementById('timerCountdown')
 
-// Timer 
-
-
-
 
 startBtnEl.addEventListener('click',startGame);
  
@@ -29,36 +25,30 @@ function startGame (){
     currentQIndex = 0 
     setNextQ();
 
-// Start timer on click 
-var timeleft = 2;
+    // Start timer on click 
+    var timeleft = 2;
 
-var startTimer = setInterval(function(){
-  if(timeleft <= 0){
-    clearInterval(startTimer);
-    document.getElementById("timerCountdown").innerHTML = "Game over";
-  } else {
-        document.getElementById("timerCountdown").innerHTML = "Score " +  timeleft;
-  }
-  timeleft -= 1;
-    }, 1000);
+    var startTimer = setInterval(function(){
+    if(timeleft <= 0){
+        clearInterval(startTimer);
+        document.getElementById("timerCountdown").innerHTML = "Game over";
+    } else {
+            document.getElementById("timerCountdown").innerHTML = "Score " +  timeleft;
+    }
+    timeleft -= 1;
+        }, 1000);
 
-// Loop with data attribute id 
-    for (var i=0; i < answers1.length; i++){
+    // Loop with data attribute id 
+    for (var i=0; i < mainQuestionList.a1.length; i++){
         var choiceEl = document.createElement("li");
         choiceEl.className = "button";
         multipleChoiceEl.appendChild(choiceEl);
         var buttonChoice = document.createElement('button');
-        buttonChoice.innerText = answers1[i];
+        buttonChoice.innerText = mainQuestionList.a1[i];
         buttonChoice.setAttribute("mc-btn", i);
         choiceEl.appendChild(buttonChoice);
-
-        
-
+    }
 }
-
-
-}
-
 
 
 // Loop through questions and answers 
@@ -68,12 +58,13 @@ function setNextQ(){
     showNextQ(currentQIndex);
 }   
 function showNextQ(question){
-    questionEl.innerText = questionList[0]  
+    questionEl.innerText = mainQuestionList.q1[0]
+}   
+var  mainQuestionList = {
+    q1: ["Which of the following is not a primitive data type in JavaScript?", "Where should you insert a JavaScript?", "How do you call a function named 'newFunction?", "How do you add a comment in a JavaScript?","Which event occurs when the user clicks on an HTML element?"],
+    a1:["Strings", "Boolean", "Undefined","Function"],
+
 }
-var questionList = ["Which of the following is not a primitive data type in JavaScript?", "Where should you insert a JavaScript?", "How do you call a function named 'newFunction?", "How do you add a comment in a JavaScript?","Which event occurs when the user clicks on an HTML element?"]
-
-var answers1 = ["Strings", "Boolean", "Undefined", "Function",] 
-
 // var answers = [
 //     answer1, {
 //             text: "Strings", correct: false},
