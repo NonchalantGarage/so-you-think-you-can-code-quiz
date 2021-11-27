@@ -1,3 +1,7 @@
+:root{
+    font-family: 'Archivo Black', sans-serif;
+}
+
 html {
     border: 1px solid black ;
 }
@@ -41,3 +45,7 @@ button{
 .reveal {
     visibility: visible;
 }
+
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
