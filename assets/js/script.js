@@ -42,14 +42,18 @@ var startTimer = setInterval(function(){
   timeleft -= 1;
     }, 1000);
 
+// Loop with data attribute id 
+    for (var i=0; i < answers1.length; i++){
+        var choiceEl = document.createElement("li");
+        choiceEl.className = "button";
+        multipleChoiceEl.appendChild(choiceEl);
+        var buttonChoice = document.createElement('button');
+        buttonChoice.innerText = answers1[i];
+        buttonChoice.setAttribute("mc-btn", i);
+        choiceEl.appendChild(buttonChoice);
 
-for (var i=0; i < answers1.length; i++){
-    var choiceEl = document.createElement("li");
-    choiceEl.className = "button";
-    multipleChoiceEl.appendChild(choiceEl);
-    var buttonChoice = document.createElement('button');
-    buttonChoice.innerText = answers1[i];
-    choiceEl.appendChild(buttonChoice);
+        
+
 }
 
 
