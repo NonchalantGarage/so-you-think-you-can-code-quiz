@@ -63,8 +63,13 @@ function showNextQ(question){
 var  mainQuestionList = {
     q1: ["Which of the following is not a primitive data type in JavaScript?", "Where should you insert a JavaScript?", "How do you call a function named 'newFunction?", "How do you add a comment in a JavaScript?","Which event occurs when the user clicks on an HTML element?"],
     a1:["Strings", "Boolean", "Undefined","Function"],
+    a2: ["The <body> section", "Both the <head> section and the <body> section are correct", "The <head> section", "The <html> section",],
+    a3: ["newFunction()","call function newFunction()","call newFunction()","newFunction.call"]
 
 }
+
+
+
 // var answers = [
 //     answer1, {
 //             text: "Strings", correct: false},
