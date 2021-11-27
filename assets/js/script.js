@@ -64,7 +64,7 @@ function setNextQ(){
     showNextQ(currentQIndex);
 }   
 function showNextQ(question){
-    questionEl.innerText = questionList[0]
+    questionEl.innerText = questionList[0]  
 }
 var questionList = ["Which of the following is not a primitive data type in JavaScript?", "Where should you insert a JavaScript?", "How do you call a function named 'newFunction?", "How do you add a comment in a JavaScript?","Which event occurs when the user clicks on an HTML element?"]
 
@@ -83,14 +83,14 @@ var answers1 = ["Strings", "Boolean", "Undefined", "Function",]
 // var questionList = [ 
 //     { 
 //         question:  "Which of the following is not a primitive data type in JavaScript?",
-//         answers: [
-//             {text: "Strings", correct: false},
-//             {text: "Boolean", correct: false},
-//             {text: "Undefined", correct: false},
-//             {text: "Function", correct: true},
-//        ] 
-//     },       
-//     { 
+//     var answersTest= [
+//             {text1: "Strings", correct: false},
+//             {text2: "Boolean", correct: false},
+//             {text3: "Undefined", correct: false},
+//             {text4: "Function", correct: true},
+//        ]  
+// typeof(answersTest);
+// console.log(answersTest);
 //         question:"Where should you insert a JavaScript?",
 //         answers: [
 //             {text: "The <body> section", correct: true},
