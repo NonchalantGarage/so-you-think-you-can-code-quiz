@@ -1,4 +1,3 @@
-// Start game function 
     // jumps to following questions
     // click the answer of four options 
     // takes you to next question and display text, if wrong deduct 10 seconds. If correct, display correct
@@ -19,12 +18,15 @@ var timerEl = document.getElementById('timerCountdown')
 
 startBtnEl.addEventListener('click',startGame);
  
+
+// Start game function 
+
 function startGame (){
+    // hide start button and title
     startBtnEl.classList.add('hide');  
     gameH1El.classList.add('hide')
-    currentQIndex = 0 
-    setNextQ();
-
+    
+  
     // Start timer on click 
     var timeleft = 2;
 
@@ -38,95 +40,123 @@ function startGame (){
     timeleft -= 1;
         }, 1000);
 
-    // Loop with data attribute id 
-    for (var i=0; i < mainQuestionList.a1.length; i++){
+    setNextQ();
+}
+
+// function setNextQ(){
+//     for (var i = 0; i < mainQuestionList.q1.length; i++){
+//         var currentQuestion = mainQuestionList.q1[i];            
+//      }
+
+//      questionEl.innerText = currentQuestion
+
+// function to set new question
+
+var currentQIndex = 0;
+
+
+function setNextQ(){
+
+    // clear current list of questions
+
+    
+
+    var questionDataObj = questionList[currentQIndex].question;
+
+    questionEl.innerText = questionDataObj
+    // set a counter outside of currentQIndex
+    
+    for (var i = 0; i < questionList[currentQIndex].answers.length; i++){
         var choiceEl = document.createElement("li");
         choiceEl.className = "button";
         multipleChoiceEl.appendChild(choiceEl);
         var buttonChoice = document.createElement('button');
-        buttonChoice.innerText = mainQuestionList.a1[i];
-        buttonChoice.setAttribute("mc-btn", i);
-        choiceEl.appendChild(buttonChoice);
-    }
-}
-
-
-// Loop through questions and answers 
-var currentQIndex 
-
-function setNextQ(){
-    showNextQ(currentQIndex);
-}   
-function showNextQ(question){
-    questionEl.innerText = mainQuestionList.q1[0]
-}   
-var  mainQuestionList = {
-    q1: ["Which of the following is not a primitive data type in JavaScript?", "Where should you insert a JavaScript?", "How do you call a function named 'newFunction?", "How do you add a comment in a JavaScript?","Which event occurs when the user clicks on an HTML element?"],
-    a1:["Strings", "Boolean", "Undefined","Function"],
-    a2: ["The <body> section", "Both the <head> section and the <body> section are correct", "The <head> section", "The <html> section",],
-    a3: ["newFunction()","call function newFunction()","call newFunction()","newFunction.call"]
-
+        buttonChoice.innerText = questionList[currentQIndex].answers[i];
+        buttonChoice.setAttribute("data-id", i);
+        choiceEl.appendChild(buttonChoice);     
+    }   
+  
 }
 
 
 
-// var answers = [
-//     answer1, {
-//             text: "Strings", correct: false},
-//             {text: text: "Boolean", correct: false},
-//             {text: "Undefined", correct: false},
-//             {text: "Function", correct: true},
-// ]
 
-// console.log(ansers);
-// broken
-// var questionList = [ 
-//     { 
-//         question:  "Which of the following is not a primitive data type in JavaScript?",
-//     var answersTest= [
-//             {text1: "Strings", correct: false},
-//             {text2: "Boolean", correct: false},
-//             {text3: "Undefined", correct: false},
-//             {text4: "Function", correct: true},
-//        ]  
-// typeof(answersTest);
-// console.log(answersTest);
-//         question:"Where should you insert a JavaScript?",
-//         answers: [
-//             {text: "The <body> section", correct: true},
-//             {text: "Both the <head> section and the <body> section are correct", correct: false},
-//             {text: "The <head> section", correct: false},
-//             {text: "The <html> section", correct: false},
-//         ]
-//         },       
-//     { 
-//         question:"How do you call a function named 'newFunction?",
-//         answers: [
-//             {text: "newFunction()", correct: true},
-//             {text: "call function newFunction()", correct: false},
-//             {text: "call newFunction()", correct: false},
-//             {text: "newFunction.call", correct: false},
-//         ]
-//     },       
-//     { 
-//     question:"How do you add a comment in a JavaScript??",
-//     answers: [
-//         {text: "//This is a comment", correct: true},
-//         {text: "<!--This is a comment-->", correct: false},
-//         {text: "'This is a comment", correct: false},
-//         {text: "**This is a comment", correct: false},
-//        ]
-//     },       
-//     { 
-//     question:"Which event occurs when the user clicks on an HTML element?",
-//     answers: [
-//         {text: "onclick", correct: false},
-//         {text: "onmouseover", correct: false},
-//         {text: "onmouseclick", correct: false},
-//         {text: "clickon", correct: true},
-//        ]
-//     },
-// ]
+
+
+var questionList = [
+    {
+        question: "Which of the following is not a primitive data type in JavaScript?",
+        answers: [
+            "Strings", "Boolean", "Undefined","Function",
+        ],
+        correct: 4
+    },
+    {
+        question: "Where should you insert JavaScript in HTML?",
+        answers: [
+            "The <body> section", "Both the <head> section and the <body> section are correct", "The <head> section", "The <html> section",
+        ],
+        correct: 1
+    },
+    {
+        question: "How do you call a function named 'newFunction?",
+        answers: [
+            "newFunction()","call function newFunction()","call newFunction()","newFunction.call",
+        ],
+        correct: 1
+    },
+    {
+        question: "How do you add a comment in a JavaScript?",
+        answers: [
+            "//This is a comment", "<!--This is a comment-->", "'This is a comment","**This is a comment",
+        ],
+        correct: 1
+    },
+    {
+        question: "Which of the following is not a primitive data type in JavaScript?",
+        answers: [
+            "onclick","onmouseover","onmouseclick","clickon",
+        ],
+        correct: 4
+    },
+    
+]
+
+
+
+// var checkAnswer = function(){
+//     if (questionList[currentQIndex].correct === ){
+
+//     }
+// }
+// var selectAnswerEl = document.getElementById("data-id")
+
+// selectAnswerEl.addEventListener("click", checkAnswer)
+
+// var  mainQuestionList = {
+//     q1: ["Which of the following is not a primitive data type in JavaScript?", "Where should you insert a JavaScript?", "How do you call a function named 'newFunction?", "How do you add a comment in a JavaScript?","Which event occurs when the user clicks on an HTML element?"],
+//     a1: ["Strings", "Boolean", "Undefined","Function"],
+//     a2: ["The <body> section", "Both the <head> section and the <body> section are correct", "The <head> section", "The <html> section",],
+//     a3: ["newFunction()","call function newFunction()","call newFunction()","newFunction.call"],
+//     a4: ["//This is a comment", "<!--This is a comment-->", "'This is a comment","**This is a comment"],
+//     a5: ["onclick","onmouseover","onmouseclick","clickon"]
+
+// }
+
+
+
+
+// for (var i=0; i < mainQuestionList.a1.length; i++){
+//     var choiceEl = document.createElement("li");
+//     choiceEl.className = "button";
+//     multipleChoiceEl.appendChild(choiceEl);
+//     var buttonChoice = document.createElement('button');
+//     buttonChoice.innerText = mainQuestionList.a1[i];
+//     buttonChoice.setAttribute("mc-btn", i);
+//     choiceEl.appendChild(buttonChoice);
+// }
+
+
 
 
 
@@ -156,3 +186,5 @@ var  mainQuestionList = {
 //         }
 //     }, 1000);
 // }
+
+
