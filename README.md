@@ -14,12 +14,12 @@ If you run out of time, it's Game Over, but fret not, you can try again.
 
 ## Screenshots
 
-(/Screenshots/1.png)
-(/Screenshots/2.png)
-(/Screenshots/3.png)
-(/Screenshots/4.png)
 
 
+![Alt text](/Screenshots/1.png "Home")
+![Alt text](/Screenshots/2.png "Question")
+![Alt text](/Screenshots/3.png "Results")
+![Alt text](/Screenshots/4.png "Console Application")
 
 
 
