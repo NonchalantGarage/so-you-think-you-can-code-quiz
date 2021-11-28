@@ -2,7 +2,7 @@
 
 ## Project Description
 
-This project is built to test your coding chops. It features 5 challenging questions that demands you to code under the pressure of time, 75 seconds. For each question you get wrong, 10 seconds is taken from your time which will result in your high score. Save your score in the localStorage under your initials for all the bragging rights. 
+This project is built to test your coding chops. It features 5 challenging questions that demands you to code under the pressure of time, 60 seconds. For each question you get wrong, 10 seconds is taken from your time which will reflect in your final score. Save your score in the localStorage under your initials for all the bragging rights. 
 
 If you run out of time, it's Game Over, but fret not, you can try again. 
 
@@ -14,9 +14,12 @@ If you run out of time, it's Game Over, but fret not, you can try again.
 
 ## Screenshots
 
-![Home Page](/screenshots/1.png "Home Page")
+![](/assets/screenshots/1.png
+![](/assets/screenshots/2.png
+![](/assets/screenshots/3.png
+![](/assets/screenshots/4.png
 
-![](/screenshots/2.png)
+
 
 
 
