@@ -46,6 +46,15 @@ button{
     visibility: visible;
 }
 
+.result{
+    display: flex;
+    flex-direction: column;
+}
+
+.result button{
+    padding: 10px;
+}
+
 
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 
