@@ -14,10 +14,10 @@ If you run out of time, it's Game Over, but fret not, you can try again.
 
 ## Screenshots
 
-/assets/Screenshots/1.png
-/assets/Screenshots/2.png
-/assets/Screenshots/3.png
-/assets/Screenshots/4.png
+(/Screenshots/1.png)
+(/Screenshots/2.png)
+(/Screenshots/3.png)
+(/Screenshots/4.png)
 
 
 
