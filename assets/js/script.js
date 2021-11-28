@@ -24,13 +24,19 @@ var timeleft = 60;
 
 
 var startTimer = function(){
-    setInterval(function(){
-    if(timeleft <= 0 || quizComplete){
-        clearInterval(startTimer);
+    var timer = setInterval(function(){
+    if( timeleft >1){
+        document.getElementById("timerCountdown").innerHTML = "Score " +  timeleft;
+        timeleft -= 1;
+
+        
+        
+    } else if (timeleft <= 0 || quizComplete){
+        clearInterval(timer);
         document.getElementById("timerCountdown").innerHTML = "Game over";
-    } else {
-            document.getElementById("timerCountdown").innerHTML = "Score " +  timeleft;
-            timeleft -= 1;
+        finish();
+        
+      
 
     }
         }, 1000);
@@ -206,28 +212,9 @@ var saveScore = function(userInfo){
 
 
 
-// var  mainQuestionList = {
-//     q1: ["Which of the following is not a primitive data type in JavaScript?", "Where should you insert a JavaScript?", "How do you call a function named 'newFunction?", "How do you add a comment in a JavaScript?","Which event occurs when the user clicks on an HTML element?"],
-//     a1: ["Strings", "Boolean", "Undefined","Function"],
-//     a2: ["The <body> section", "Both the <head> section and the <body> section are correct", "The <head> section", "The <html> section",],
-//     a3: ["newFunction()","call function newFunction()","call newFunction()","newFunction.call"],
-//     a4: ["//This is a comment", "<!--This is a comment-->", "'This is a comment","**This is a comment"],
-//     a5: ["onclick","onmouseover","onmouseclick","clickon"]
-
-// }
 
 
 
-
-// for (var i=0; i < mainQuestionList.a1.length; i++){
-//     var choiceEl = document.createElement("li");
-//     choiceEl.className = "button";
-//     multipleChoiceEl.appendChild(choiceEl);
-//     var buttonChoice = document.createElement('button');
-//     buttonChoice.innerText = mainQuestionList.a1[i];
-//     buttonChoice.setAttribute("mc-btn", i);
-//     choiceEl.appendChild(buttonChoice);
-// }
 
 
 
