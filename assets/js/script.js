@@ -1,13 +1,3 @@
-    // jumps to following questions
-    // click the answer of four options 
-    // takes you to next question and display text, if wrong deduct 10 seconds. If correct, display correct
-// Game ends if timer is 0  or reached all done page 
-// If completed enter intials and save to localStorage
-
-
-
-// If wrong deduct 10 seconds from timer and display text 
-        
 var gameH1El = document.getElementById('quiz-title');
 var startBtnEl = document.getElementById('start-btn');
 var questionEl = document.getElementById('question')
@@ -20,23 +10,21 @@ var pageEl = document.getAnimations('quizcontainer')
 startBtnEl.addEventListener('click',startGame);
  
 
-var timeleft = 60;
+var timeleft = 10;
 
+// quiz ends when timer reaches 0 or finished answering all 5 questions  
 
 var startTimer = function(){
-    var timer = setInterval(function(){
-    if( timeleft >1){
-        document.getElementById("timerCountdown").innerHTML = "Score " +  timeleft;
-        timeleft -= 1;
+    var time = setInterval(function(){
+        // Game ends if timer is 0  or reached end page 
 
-        
-        
-    } else if (timeleft <= 0 || quizComplete){
-        clearInterval(timer);
+    if(timeleft < 1 || quizComplete){
         document.getElementById("timerCountdown").innerHTML = "Game over";
+        clearInterval(time);
         finish();
-        
-      
+    } else {
+            document.getElementById("timerCountdown").innerHTML = "Score " +  timeleft;
+            timeleft -= 1;
 
     }
         }, 1000);
@@ -73,6 +61,7 @@ var currentQIndex = 0;
 
 
 function setNextQ(){
+    // clears question
     multipleChoiceEl.innerHTML = ""
 
     // clear current list of questions
@@ -145,7 +134,9 @@ var questionEventHandler = function(event){
     if (isAnswer){
         var answerBtn = event.target;
         var isCorrect = questionList[currentQIndex].correct === parseInt(answerBtn.dataset.id)
-        
+
+        // If wrong deduct 10 seconds from timer and display text 
+
         if (!isCorrect) {
             timeleft -=10;
         }
@@ -162,8 +153,6 @@ var questionEventHandler = function(event){
 
 
 }
-
-
 
 var finish = function (){
 
@@ -184,10 +173,9 @@ var finish = function (){
     formElBtn.innerText = "Submit";
     var enterInitials = document.createElement("p");
     resultEl.appendChild(enterInitials);
-
     formElBtn.addEventListener("click", saveInitial)
+    setTimeout(time)
 
-    
 }
 
 var saveInitial = function(event){
@@ -205,6 +193,7 @@ var saveInitial = function(event){
 
 
 multipleChoiceEl.addEventListener("click", questionEventHandler)
+// Track score using local storage 
 
 var saveScore = function(userInfo){
     localStorage.setItem("High Score", JSON.stringify(userInfo));
@@ -219,32 +208,5 @@ var saveScore = function(userInfo){
 
 
 
-
-// Timer Logic 
-
-
-// quiz ends when timer reaches 0 or finished answering all 5 questions  
-
-
-// Track score using local storage 
-
-
-
-// var startTimer = function(duration,display){
-//     var timer= duration, minutes, seconds;
-//     setInterval(function(){
-//         minutes = parseInt(timer / 60,10);
-//         seconds = parseInt(timer % 60,10);
-
-//         minutes = minutes < 10 ? "0" + minutes : minutes;
-//         seconds = seconds < 10 ? "0" + seconds : seconds;
-
-//         display.textContent = minutes + ":" + seconds;
-
-//         if(--timer < 0) {
-//             timer = duration;
-//         }
-//     }, 1000);
-// }
 
 
