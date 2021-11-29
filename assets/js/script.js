@@ -10,7 +10,7 @@ var pageEl = document.getAnimations('quizcontainer')
 startBtnEl.addEventListener('click',startGame);
  
 
-var timeleft = 10;
+var timeleft = 60;  
 
 // quiz ends when timer reaches 0 or finished answering all 5 questions  
 
@@ -18,14 +18,14 @@ var startTimer = function(){
     var time = setInterval(function(){
         // Game ends if timer is 0  or reached end page 
 
-    if(timeleft < 1 || quizComplete){
+    if(timeleft >1){
+        document.getElementById("timerCountdown").innerHTML = "Score " +  timeleft;
+        timeleft -= 1;
+        
+    } else {
         document.getElementById("timerCountdown").innerHTML = "Game over";
         clearInterval(time);
         finish();
-    } else {
-            document.getElementById("timerCountdown").innerHTML = "Score " +  timeleft;
-            timeleft -= 1;
-
     }
         }, 1000);
 }
@@ -174,7 +174,6 @@ var finish = function (){
     var enterInitials = document.createElement("p");
     resultEl.appendChild(enterInitials);
     formElBtn.addEventListener("click", saveInitial)
-    setTimeout(time)
 
 }
 
